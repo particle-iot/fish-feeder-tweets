@@ -31,6 +31,6 @@ var pixelStream = new Pixels(pixelConfig);
 var deviceStream = new Device(deviceConfig);
 
 tweetStream
-//.pipe(pixelStream)
+	.pipe(pixelStream)
 	.pipe(deviceStream)
 ;
