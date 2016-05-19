@@ -1,6 +1,6 @@
-pixel-tweets
+Particle MF Fish Tweeter
 ============
-Stream tweet events and convert them to pixel data for a Spark Internet Button!
+Stream tweet events to feed the Particle fishbowl!
 
 ### Summary
 
@@ -30,20 +30,18 @@ You need all four of these to run the twitter stream included in `npm start`. Co
   	"consumer_secret": "",
   	"access_token_key": "",
   	"access_token_secret": "",
-    "spark_username": "",
-    "spark_password": "",
-    "filter": ""
+    "username": "",
+    "password": "",
+    "filter": "",
+    "id": ""
   }
   ```
-  
+`username`: Your Particle username
+`password`: Your Particle password
+`id`: Your Particle device ID
+`filter`: The Twitter search term you use to filter the tweet stream
+
 ### Installation
-#### Firmware
-
-The easiest way to flash the firmware is to [put your Core into DFU mode](http://docs.spark.io/connect/#appendix-dfu-mode-device-firmware-upgrad), and use the Spark CLI to directly flash the firmware binary to your Core:
-
-```bash
-spark flash --usb ./firmware/bin/firmware.bin 
-```
 
 #### JavaScript
 
@@ -55,23 +53,19 @@ npm start
 ### Usage
 
 #### Tweeting
-Once you have your Spark Core flashed, your Twitter application created, and your Node process running; you may tweet at your Internet Button! Use the following format:
+Once you have your Particle device flashed, your Twitter application
+created, and your Node process running; you may tweet at the fish bowl! Use the following format:
 
 ```
-<hashtag> <pixel number> <color>
+<hashtag> <color>
 ```
 
 Any of the following tweets are valid:
+
 ```
-#pixeltweets 1 blue
-#pixeltweets green 9
-#pixeltweets 3 #ff00ff
-11 #fff #pixeltweets
-#pixeltweets 5 off
+#ParticleFishFeeder
+#ParticleFishFeeder blue
+#ParticleFishFeeder yellow
+#ParticleFishFeeder red
 ```
 
-The order of hashtag, pixel number, and color are irrelevant. Any tweet that can be parsed to find a number between 1-11 and a valid CSS color name or hex value (in 3 or 6 digit format) will work. The filter can also be something other than a hashtag!
-
-#### Picking the right colors to tweet
-
-Choosing the perfect hue can be challenging. See this lovely list of [CSS color names](http://www.w3schools.com/cssref/css_colornames.asp) on [W3schools.com](http://www.w3schools.com/) for inspiring color choices!
